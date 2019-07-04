@@ -82,7 +82,7 @@ app.get('/stocker', function (req, res) {
     try {
         if (func == 'addstock') {
             if(amount){
-                if (amount != parseInt(amount, 10)) {
+                if (amount != parseInt(amount, 10)||amount<0) {
                     res.send('ERROR');
                 }
             }
