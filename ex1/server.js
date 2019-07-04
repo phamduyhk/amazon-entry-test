@@ -4,7 +4,6 @@ const BasicStrategy = require('passport-http').BasicStrategy;
 const http = require('http');
 const calc = require('./calculator');
 const db = require('./dbUtils');
-const externalip = require('externalip')
 
 var port = 8080
 
@@ -130,7 +129,3 @@ app.get('/stocker', function (req, res) {
         });
     }
 })
-
-externalip(function (err, ip) {
-    console.log(ip); // => 8.8.8.8
-});
