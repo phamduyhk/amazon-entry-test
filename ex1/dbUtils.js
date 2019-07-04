@@ -49,11 +49,13 @@ db.sell = function (name = isRequired(), amount, price) {
         name:name
     }).then(function(data){
         let sale = 0;
-        if(data.sale){
-            sale = data.sale;
-        }
-        if(data.amount){
-            dbAmount = data.amount;
+        if(data){
+            if (data.sale) {
+                sale = data.sale;
+            }
+            if (data.amount) {
+                dbAmount = data.amount;
+            }
         }
         let dbAmountNum = Number(dbAmount);
         let reqAmount = Number(amount);
