@@ -94,7 +94,7 @@ app.get('/stocker', function (req, res) {
                 data.forEach(function (item) {
                     let str = ""
                     str = item.name + ":" + item.amount
-                    res.write(str);
+                    res.send(str);
                 })
                 res.end()
             })
