@@ -81,9 +81,12 @@ app.get('/stocker', function (req, res) {
     let price = query["price"];
     try {
         if (func == 'addstock') {
-                if (amount != parseInt(amount, 10)||amount<0) {
+            if (amount == undefined) {
+                amount = 1;
+            }
+            if (amount != parseInt(amount, 10)||amount<0) {
                     res.send('ERROR');
-                }
+            }
             else{
                 db.addstock(name, amount);
                 res.end();

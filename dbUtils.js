@@ -9,9 +9,6 @@ db.users.load();
 // console.log("successful remote connect database first time");
 // insert
 db.addstock = function (name = isRequired(), amount) {
-    if(amount==undefined){
-        amount = 1;
-    }
     db.users.update({
         name: name,
     }, {
