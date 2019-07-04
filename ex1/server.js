@@ -93,8 +93,8 @@ app.get('/stocker', function (req, res) {
                 console.log(data)
                 data.forEach(function (item) {
                     let str = ""
-                    str = item.name + ":" + item.amount
-                    res.send(str);
+                    str = item.name + ": " + item.amount +"\n"
+                    res.write(str);
                 })
                 res.end()
             })
@@ -110,7 +110,7 @@ app.get('/stocker', function (req, res) {
                         sales += item.sale;
                     }
                 })
-                res.write("sales:"+sales);
+                res.write("sales: "+sales);
                 res.end();
             })
         } else if (func == 'deleteall'){
