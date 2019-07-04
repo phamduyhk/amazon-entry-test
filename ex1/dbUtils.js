@@ -84,10 +84,11 @@ db.checksales = function(){
 }
 
 db.deleteall = function(){
-    db.users.remove({
-    }, {
-        multi: true
-    })
+    db.users.remove({}, {
+                multi: true
+            }, function (err, numRemoved) {
+            }
+            )
 }
 
 
